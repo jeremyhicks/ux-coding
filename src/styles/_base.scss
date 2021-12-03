@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+@import '_colors';
+
+// normalize
+body {
+  background-color: $stoneBlack7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: break-word;
+  margin: 0;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  outline: none;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+// general classes
+
+$sizes: 2, 4, 6, 8, 12, 14, 16, 20, 24, 32, 40, 48, 64, 96, 128, 256;
+
+@each $size in $sizes {
+  .kui-p-#{$size} {
+    padding: #{$size}px;
+  }
+  .kui-pl-#{$size} {
+    padding-left: #{$size}px;
+  }
+  .kui-pr-#{$size} {
+    padding-right: #{$size}px;
+  }
+  .kui-px-#{$size} {
+    padding-left: #{$size}px;
+    padding-right: #{$size}px;
+  }
+  .kui-pt-#{$size} {
+    padding-top: #{$size}px;
+  }
+  .kui-pb-#{$size} {
+    padding-bottom: #{$size}px;
+  }
+  .kui-py-#{$size} {
+    padding-top: #{$size}px;
+    padding-bottom: #{$size}px;
+  }
+
+  .kui-m-#{$size} {
+    margin: #{$size}px;
+  }
+  .kui-ml-#{$size} {
+    margin-left: #{$size}px;
+  }
+  .kui-mr-#{$size} {
+    margin-right: #{$size}px;
+  }
+  .kui-mx-#{$size} {
+    margin-left: #{$size}px;
+    margin-right: #{$size}px;
+  }
+  .kui-mt-#{$size} {
+    margin-top: #{$size}px;
+  }
+  .kui-mb-#{$size} {
+    margin-bottom: #{$size}px;
+  }
+  .kui-my-#{$size} {
+    margin-top: #{$size}px;
+    margin-bottom: #{$size}px;
+  }
+
+  .kui-m-n-#{$size} {
+    margin: -#{$size}px;
+  }
+  .kui-ml-n-#{$size} {
+    margin-left: -#{$size}px;
+  }
+  .kui-mr-n-#{$size} {
+    margin-right: -#{$size}px;
+  }
+  .kui-mx-n-#{$size} {
+    margin-left: -#{$size}px;
+    margin-right: -#{$size}px;
+  }
+  .kui-mt-n-#{$size} {
+    margin-top: -#{$size}px;
+  }
+  .kui-mb-n-#{$size} {
+    margin-bottom: -#{$size}px;
+  }
+  .kui-my-n-#{$size} {
+    margin-top: -#{$size}px;
+    margin-bottom: -#{$size}px;
+  }
+}
+
+$boxSizes: 12, 16, 20, 24, 32, 48, 60;
+@each $size in $boxSizes {
+  .kui-box-size-#{$size} {
+    width: #{$size}px;
+    height: #{$size}px;
+  }
+}
+
+$borderRadiusSizes: 4, 6;
+@each $size in $borderRadiusSizes {
+  .kui-br-#{$size} {
+    border-radius: #{$size}px;
+  }
+}
+
+.kui-center-v {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.kui-center-h {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.kui-mla {
+  margin-left: auto;
+}
+
+.kui-text-muted {
+  color: $muted;
+}
+
+// color classes
+$colors: (
+  'marine-blue': $marineBlue,
+  'amber-gold': $amberGold,
+  'stone-black': $stoneBlack,
+  'white': $white,
+  'marine-blue-1': $marineBlue1,
+  'amber-gold-m-1': $amberGoldM1,
+  'amber-gold-m-2': $amberGoldM2,
+  'amber-gold-m-3': $amberGoldM3,
+  'stone-black-1': $stoneBlack1,
+  'stone-black-2': $stoneBlack2,
+  'stone-black-3': $stoneBlack3,
+  'stone-black-4': $stoneBlack4,
+  'stone-black-5': $stoneBlack5,
+  'stone-black-6': $stoneBlack6,
+  'stone-black-7': $stoneBlack7,
+  'positive': $positive,
+  'negative': $negative,
+  'purple': $purple,
+  'positive-m-1': $positiveM1,
+  'positive-m-2': $positiveM2,
+  'negative-m-2': $negativeM2,
+  'negative-m-1': $negativeM1,
+  'negative-4': $negative4,
+  // duplicates of positive and negative
+  'green': $positive,
+  'red': $negative,
+  'red-m-2': $negativeM2,
+  'red-m-3': $negativeM3,
+  'red-m-1': $negativeM1,
+  'red-4': $negative4,
+);
+@each $className, $varName in $colors {
+  .kui-color-#{$className} {
+    color: $varName;
+  }
+  .kui-bc-#{$className} {
+    background-color: $varName;
+  }
+  .kui-border-#{$className} {
+    border-color: $varName;
+  }
+  .kui-stroke-#{$className} {
+    stroke: $varName;
+  }
+}
+
+.kui-db {
+  display: block;
+}
+
+.kui-df {
+  display: flex;
+}
+
+.kui-aic {
+  align-items: center;
+}
+
+.kui-fdc {
+  flex-direction: column;
+}
+
+.kui-jcc {
+  justify-content: center;
+}
+
+.kui-jc-sb {
+  justify-content: space-between;
+}
+
+.kui-jc-fe {
+  justify-content: flex-end;
+}
+
+.kui-jc-fs {
+  justify-content: flex-start;
+}
+
+.kui-f-1 {
+  flex: 1;
+}
+
+.kui-ellips {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.kui-tac {
+  text-align: center;
+}
+
+
+
+.kui-icon {
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.appBar-img {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
